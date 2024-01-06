@@ -29,7 +29,7 @@ class GalleryImage extends StatefulWidget {
   final bool showAppBar;
   final bool closeWhenSwipeUp;
   final bool closeWhenSwipeDown;
-  final void Function(String)? onImagePress;
+  final void Function(int)? onImagePress;
   
   const GalleryImage({
     Key? key,
