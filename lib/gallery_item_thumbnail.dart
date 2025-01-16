@@ -7,6 +7,7 @@ import 'gallery_item_model.dart';
 class GalleryItemThumbnail extends StatelessWidget {
   final GalleryItemModel galleryItem;
   final GestureTapCallback? onTap;
+  final GestureLongPressCallback? onLongPress;
   final Widget? loadingWidget;
   final Widget? errorWidget;
   final double radius;
@@ -15,6 +16,7 @@ class GalleryItemThumbnail extends StatelessWidget {
       {Key? key,
       required this.galleryItem,
       required this.onTap,
+        required this.onLongPress,
       required this.radius,
       required this.loadingWidget,
       required this.errorWidget})
@@ -24,6 +26,7 @@ class GalleryItemThumbnail extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
+      onLongPress: onLongPress,
       child: Hero(
         tag: galleryItem.id,
         child: AppCachedNetworkImage(

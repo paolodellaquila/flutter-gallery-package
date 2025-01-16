@@ -94,6 +94,9 @@ class _GalleryImageState extends State<GalleryImage> {
                       onTap: () {
                         _openImageFullScreen(index);
                       },
+                      onLongPress: () {
+                        widget.onImagePress?.call(index);
+                      },
                       loadingWidget: widget.loadingWidget,
                       errorWidget: widget.errorWidget,
                       radius: widget.imageRadius,
@@ -119,6 +122,7 @@ class _GalleryImageState extends State<GalleryImage> {
             loadingWidget: widget.loadingWidget,
             errorWidget: widget.errorWidget,
             onTap: null,
+            onLongPress: null,
             radius: widget.imageRadius,
           ),
           ClipRRect(
